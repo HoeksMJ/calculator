@@ -7,7 +7,9 @@ clearBtn.addEventListener("click", () => {clearDisplay();});
 
 const zeroBtn = document.getElementById("zeroBtn");
 zeroBtn.addEventListener("click", () => {
+    if (displayNum.innerText.length < 10){
     displayNum.innerText = String(displayNum.innerText) + "0";
+    };
 });
 
 const oneBtn = document.getElementById("oneBtn");
@@ -15,7 +17,7 @@ oneBtn.addEventListener("click", () => {
     if (displayNum.innerText == 0){
         displayNum.innerText = 1;
     }
-    else {
+    else if (displayNum.innerText.length < 10){
         displayNum.innerText = String(displayNum.innerText) + "1";
     };
 });
@@ -25,7 +27,7 @@ twoBtn.addEventListener("click", () => {
     if (displayNum.innerText == 0){
         displayNum.innerText = 2;
     }
-    else {
+    else if (displayNum.innerText.length < 10){
         displayNum.innerText = String(displayNum.innerText) + "2";
     };
 });
@@ -35,7 +37,7 @@ threeBtn.addEventListener("click", () => {
     if (displayNum.innerText == 0){
         displayNum.innerText = 3;
     }
-    else {
+    else if (displayNum.innerText.length < 10){
         displayNum.innerText = String(displayNum.innerText) + "3";
     };
 });
@@ -45,7 +47,7 @@ fourBtn.addEventListener("click", () => {
     if (displayNum.innerText == 0){
         displayNum.innerText = 4;
     }
-    else {
+    else if (displayNum.innerText.length < 10){
         displayNum.innerText = String(displayNum.innerText) + "4";
     };
 });
@@ -55,7 +57,7 @@ fiveBtn.addEventListener("click", () => {
     if (displayNum.innerText == 0){
         displayNum.innerText = 5;
     }
-    else {
+    else if (displayNum.innerText.length < 10){
         displayNum.innerText = String(displayNum.innerText) + "5";
     };
 });
@@ -65,7 +67,7 @@ sixBtn.addEventListener("click", () => {
     if (displayNum.innerText == 0){
         displayNum.innerText = 6;
     }
-    else {
+    else if (displayNum.innerText.length < 10){
         displayNum.innerText = String(displayNum.innerText) + "6";
     };
 });
@@ -75,7 +77,7 @@ sevenBtn.addEventListener("click", () => {
     if (displayNum.innerText == 0){
         displayNum.innerText = 7;
     }
-    else {
+    else if (displayNum.innerText.length < 10){
         displayNum.innerText = String(displayNum.innerText) + "7";
     };
 });
@@ -85,7 +87,7 @@ eightBtn.addEventListener("click", () => {
     if (displayNum.innerText == 0){
         displayNum.innerText = 8;
     }
-    else {
+    else if (displayNum.innerText.length < 10){
         displayNum.innerText = String(displayNum.innerText) + "8";
     };
 });
@@ -95,7 +97,7 @@ nineBtn.addEventListener("click", () => {
     if (displayNum.innerText == 0){
         displayNum.innerText = 9;
     }
-    else {
+    else if (displayNum.innerText.length < 10){
         displayNum.innerText = String(displayNum.innerText) + "9";
     };
 });
