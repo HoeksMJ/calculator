@@ -117,6 +117,20 @@ multBtn.addEventListener("click", () => {
     clearDisplay();
 });
 
+const minusBtn = document.getElementById("minusBtn");
+minusBtn.addEventListener("click", () => {
+    storedValue = Number(displayNum.innerText);
+    storedOperator = "minus";
+    clearDisplay();
+});
+
+const addBtn = document.getElementById("addBtn");
+addBtn.addEventListener("click", () => {
+    storedValue = Number(displayNum.innerText);
+    storedOperator = "add";
+    clearDisplay();
+});
+
 const equalsBtn = document.getElementById("equalsBtn");
 equalsBtn.addEventListener("click", () => {
     if (storedOperator == "divide"){
@@ -125,4 +139,10 @@ equalsBtn.addEventListener("click", () => {
     else if (storedOperator == "multiply"){
         displayNum.innerText = storedValue * Number(displayNum.innerText);
     }
+    else if (storedOperator == "minus"){
+        displayNum.innerText = storedValue - Number(displayNum.innerText);
+    }
+    else {
+        displayNum.innerText = storedValue + Number(displayNum.innerText);
+    };
 });
