@@ -99,3 +99,12 @@ nineBtn.addEventListener("click", () => {
         displayNum.innerText = String(displayNum.innerText) + "9";
     };
 });
+
+let storedValue;
+let storedOperator;
+
+const divBtn = document.getElementById("divBtn");
+divBtn.addEventListener("click", () => {
+    storedValue = Number(displayNum.innerText);
+    clearDisplay();
+});
