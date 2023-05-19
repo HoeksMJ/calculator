@@ -28,7 +28,7 @@ body {
     align-items: center;
 }
 
-.displayContainer div {
+.displayContainer #displayNum {
     margin: 25px;
     font-size: 80px;
     color: white;
