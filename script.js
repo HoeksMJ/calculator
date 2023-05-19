@@ -1,7 +1,8 @@
-let displayNum = document.getElementById("displayNum");
+const displayNum = document.getElementById("displayNum");
 
-let clearDisplay = () => {displayNum.innerText = 0;};
+const clearDisplay = () => {displayNum.innerText = 0;};
 
+displayNum.innerText = "hi"
 
-
-
+const clearBtn = document.getElementById("clearBtn");
+clearBtn.addEventListener("click", () => {console.log("clicked"); clearDisplay();});
