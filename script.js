@@ -110,9 +110,19 @@ divBtn.addEventListener("click", () => {
     clearDisplay();
 });
 
+const multBtn = document.getElementById("multBtn");
+multBtn.addEventListener("click", () => {
+    storedValue = Number(displayNum.innerText);
+    storedOperator = "multiply";
+    clearDisplay();
+});
+
 const equalsBtn = document.getElementById("equalsBtn");
 equalsBtn.addEventListener("click", () => {
     if (storedOperator == "divide"){
         displayNum.innerText = storedValue / Number(displayNum.innerText);
-    };
+    }
+    else if (storedOperator == "multiply"){
+        displayNum.innerText = storedValue * Number(displayNum.innerText);
+    }
 });
