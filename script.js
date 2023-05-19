@@ -106,5 +106,13 @@ let storedOperator;
 const divBtn = document.getElementById("divBtn");
 divBtn.addEventListener("click", () => {
     storedValue = Number(displayNum.innerText);
+    storedOperator = "divide";
     clearDisplay();
+});
+
+const equalsBtn = document.getElementById("equalsBtn");
+equalsBtn.addEventListener("click", () => {
+    if (storedOperator == "divide"){
+        displayNum.innerText = storedValue / Number(displayNum.innerText);
+    };
 });
