@@ -7,6 +7,9 @@ clearBtn.addEventListener("click", () => {clearDisplay();});
 
 const zeroBtn = document.getElementById("zeroBtn");
 zeroBtn.addEventListener("click", () => {
+    if (storedOperator != 0) {
+        clearDisplay();
+    };
     if (displayNum.innerText.length < 10){
     displayNum.innerText = String(displayNum.innerText) + "0";
     };
@@ -14,6 +17,9 @@ zeroBtn.addEventListener("click", () => {
 
 const oneBtn = document.getElementById("oneBtn");
 oneBtn.addEventListener("click", () => {
+    if (storedOperator != 0) {
+        clearDisplay();
+    };
     if (displayNum.innerText == 0){
         displayNum.innerText = 1;
     }
@@ -24,6 +30,9 @@ oneBtn.addEventListener("click", () => {
 
 const twoBtn = document.getElementById("twoBtn");
 twoBtn.addEventListener("click", () => {
+    if (storedOperator != 0) {
+        clearDisplay();
+    };
     if (displayNum.innerText == 0){
         displayNum.innerText = 2;
     }
@@ -34,6 +43,9 @@ twoBtn.addEventListener("click", () => {
 
 const threeBtn = document.getElementById("threeBtn");
 threeBtn.addEventListener("click", () => {
+    if (storedOperator != 0) {
+        clearDisplay();
+    };
     if (displayNum.innerText == 0){
         displayNum.innerText = 3;
     }
@@ -44,6 +56,9 @@ threeBtn.addEventListener("click", () => {
 
 const fourBtn = document.getElementById("fourBtn");
 fourBtn.addEventListener("click", () => {
+    if (storedOperator != 0) {
+        clearDisplay();
+    };
     if (displayNum.innerText == 0){
         displayNum.innerText = 4;
     }
@@ -54,6 +69,9 @@ fourBtn.addEventListener("click", () => {
 
 const fiveBtn = document.getElementById("fiveBtn");
 fiveBtn.addEventListener("click", () => {
+    if (storedOperator != 0) {
+        clearDisplay();
+    };
     if (displayNum.innerText == 0){
         displayNum.innerText = 5;
     }
@@ -64,6 +82,9 @@ fiveBtn.addEventListener("click", () => {
 
 const sixBtn = document.getElementById("sixBtn");
 sixBtn.addEventListener("click", () => {
+    if (storedOperator != 0) {
+        clearDisplay();
+    };
     if (displayNum.innerText == 0){
         displayNum.innerText = 6;
     }
@@ -74,6 +95,9 @@ sixBtn.addEventListener("click", () => {
 
 const sevenBtn = document.getElementById("sevenBtn");
 sevenBtn.addEventListener("click", () => {
+    if (storedOperator != 0) {
+        clearDisplay();
+    };
     if (displayNum.innerText == 0){
         displayNum.innerText = 7;
     }
@@ -84,6 +108,9 @@ sevenBtn.addEventListener("click", () => {
 
 const eightBtn = document.getElementById("eightBtn");
 eightBtn.addEventListener("click", () => {
+    if (storedOperator != 0) {
+        clearDisplay();
+    };
     if (displayNum.innerText == 0){
         displayNum.innerText = 8;
     }
@@ -94,6 +121,9 @@ eightBtn.addEventListener("click", () => {
 
 const nineBtn = document.getElementById("nineBtn");
 nineBtn.addEventListener("click", () => {
+    if (storedOperator != 0) {
+        clearDisplay();
+    };
     if (displayNum.innerText == 0){
         displayNum.innerText = 9;
     }
@@ -102,35 +132,31 @@ nineBtn.addEventListener("click", () => {
     };
 });
 
-let storedValue;
-let storedOperator;
+let storedValue = 0;
+let storedOperator = 0;
 
 const divBtn = document.getElementById("divBtn");
 divBtn.addEventListener("click", () => {
     storedValue = Number(displayNum.innerText);
     storedOperator = "divide";
-    clearDisplay();
 });
 
 const multBtn = document.getElementById("multBtn");
 multBtn.addEventListener("click", () => {
     storedValue = Number(displayNum.innerText);
     storedOperator = "multiply";
-    clearDisplay();
 });
 
 const minusBtn = document.getElementById("minusBtn");
 minusBtn.addEventListener("click", () => {
     storedValue = Number(displayNum.innerText);
     storedOperator = "minus";
-    clearDisplay();
 });
 
 const addBtn = document.getElementById("addBtn");
 addBtn.addEventListener("click", () => {
     storedValue = Number(displayNum.innerText);
     storedOperator = "add";
-    clearDisplay();
 });
 
 const equalsBtn = document.getElementById("equalsBtn");
@@ -144,7 +170,8 @@ equalsBtn.addEventListener("click", () => {
     else if (storedOperator == "minus"){
         displayNum.innerText = storedValue - Number(displayNum.innerText);
     }
-    else {
+    else if (storedOperator == "add"){
         displayNum.innerText = storedValue + Number(displayNum.innerText);
     };
+    storedOperator = 0;
 });
