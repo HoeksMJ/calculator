@@ -1,9 +1,17 @@
 const displayNum = document.getElementById("displayNum");
 
-const clearDisplay = () => {displayNum.innerText = 0;};
+let storedValue = 0;
+let storedOperator = 0;
+let operatorPressed = false;
 
-const clearBtn = document.getElementById("clearBtn");
-clearBtn.addEventListener("click", () => {clearDisplay();});
+const clearCalculator = () => {
+    displayNum.innerText = 0;
+    storedValue = 0;
+    storedOperator = 0;
+    operatorPressed = false;
+};
+
+const clearDisplay = () => {displayNum.innerText = 0;};
 
 const showNum = (number) => {
     if (operatorPressed == true) {
@@ -17,6 +25,54 @@ const showNum = (number) => {
         displayNum.innerText = String(displayNum.innerText) + `${number.innerText}`;
     };
 };
+
+const clearBtn = document.getElementById("clearBtn");
+clearBtn.addEventListener("click", () => {clearCalculator();});
+
+const divBtn = document.getElementById("divBtn");
+divBtn.addEventListener("click", () => {
+    storedValue = Number(displayNum.innerText);
+    storedOperator = "divide";
+    operatorPressed = true;
+});
+
+const multBtn = document.getElementById("multBtn");
+multBtn.addEventListener("click", () => {
+    storedValue = Number(displayNum.innerText);
+    storedOperator = "multiply";
+    operatorPressed = true;
+});
+
+const minusBtn = document.getElementById("minusBtn");
+minusBtn.addEventListener("click", () => {
+    storedValue = Number(displayNum.innerText);
+    storedOperator = "minus";
+    operatorPressed = true;
+});
+
+const addBtn = document.getElementById("addBtn");
+addBtn.addEventListener("click", () => {
+    storedValue = Number(displayNum.innerText);
+    storedOperator = "add";
+    operatorPressed = true;
+});
+
+const equalsBtn = document.getElementById("equalsBtn");
+equalsBtn.addEventListener("click", () => {
+    if (storedOperator == "divide"){
+        displayNum.innerText = storedValue / Number(displayNum.innerText);
+    }
+    else if (storedOperator == "multiply"){
+        displayNum.innerText = storedValue * Number(displayNum.innerText);
+    }
+    else if (storedOperator == "minus"){
+        displayNum.innerText = storedValue - Number(displayNum.innerText);
+    }
+    else if (storedOperator == "add"){
+        displayNum.innerText = storedValue + Number(displayNum.innerText);
+    };
+    storedOperator = 0;
+});
 
 const zeroBtn = document.getElementById("zeroBtn");
 zeroBtn.addEventListener("click", () => {
@@ -66,53 +122,4 @@ eightBtn.addEventListener("click", () => {
 const nineBtn = document.getElementById("nineBtn");
 nineBtn.addEventListener("click", () => {
     showNum(nineBtn);
-});
-
-let storedValue = 0;
-let storedOperator = 0;
-let operatorPressed = false;
-
-const divBtn = document.getElementById("divBtn");
-divBtn.addEventListener("click", () => {
-    storedValue = Number(displayNum.innerText);
-    storedOperator = "divide";
-    operatorPressed = true;
-});
-
-const multBtn = document.getElementById("multBtn");
-multBtn.addEventListener("click", () => {
-    storedValue = Number(displayNum.innerText);
-    storedOperator = "multiply";
-    operatorPressed = true;
-});
-
-const minusBtn = document.getElementById("minusBtn");
-minusBtn.addEventListener("click", () => {
-    storedValue = Number(displayNum.innerText);
-    storedOperator = "minus";
-    operatorPressed = true;
-});
-
-const addBtn = document.getElementById("addBtn");
-addBtn.addEventListener("click", () => {
-    storedValue = Number(displayNum.innerText);
-    storedOperator = "add";
-    operatorPressed = true;
-});
-
-const equalsBtn = document.getElementById("equalsBtn");
-equalsBtn.addEventListener("click", () => {
-    if (storedOperator == "divide"){
-        displayNum.innerText = storedValue / Number(displayNum.innerText);
-    }
-    else if (storedOperator == "multiply"){
-        displayNum.innerText = storedValue * Number(displayNum.innerText);
-    }
-    else if (storedOperator == "minus"){
-        displayNum.innerText = storedValue - Number(displayNum.innerText);
-    }
-    else if (storedOperator == "add"){
-        displayNum.innerText = storedValue + Number(displayNum.innerText);
-    };
-    storedOperator = 0;
 });
