@@ -6,8 +6,9 @@ const clearBtn = document.getElementById("clearBtn");
 clearBtn.addEventListener("click", () => {clearDisplay();});
 
 const showNum = (number) => {
-    if (storedOperator != 0) {
+    if (operatorPressed == true) {
         clearDisplay();
+        operatorPressed = false;
     };
     if (displayNum.innerText == 0){
         displayNum.innerText = number.innerText;
@@ -69,29 +70,34 @@ nineBtn.addEventListener("click", () => {
 
 let storedValue = 0;
 let storedOperator = 0;
+let operatorPressed = false;
 
 const divBtn = document.getElementById("divBtn");
 divBtn.addEventListener("click", () => {
     storedValue = Number(displayNum.innerText);
     storedOperator = "divide";
+    operatorPressed = true;
 });
 
 const multBtn = document.getElementById("multBtn");
 multBtn.addEventListener("click", () => {
     storedValue = Number(displayNum.innerText);
     storedOperator = "multiply";
+    operatorPressed = true;
 });
 
 const minusBtn = document.getElementById("minusBtn");
 minusBtn.addEventListener("click", () => {
     storedValue = Number(displayNum.innerText);
     storedOperator = "minus";
+    operatorPressed = true;
 });
 
 const addBtn = document.getElementById("addBtn");
 addBtn.addEventListener("click", () => {
     storedValue = Number(displayNum.innerText);
     storedOperator = "add";
+    operatorPressed = true;
 });
 
 const equalsBtn = document.getElementById("equalsBtn");
