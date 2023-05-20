@@ -71,6 +71,9 @@ equalsBtn.addEventListener("click", () => {
     else if (storedOperator == "add"){
         displayNum.innerText = storedValue + Number(displayNum.innerText);
     };
+    if (displayNum.innerText.length > 10){
+        displayNum.innerText = "ERROR";
+    };
     storedOperator = 0;
 });
 
