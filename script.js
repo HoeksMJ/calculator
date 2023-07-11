@@ -29,6 +29,14 @@ const showNum = (number) => {
 const clearBtn = document.getElementById("clearBtn");
 clearBtn.addEventListener("click", () => {clearCalculator();});
 
+const decBtn = document.getElementById("decBtn");
+decBtn.addEventListener("click", () => {
+    //if displaynum inner text does not include . already
+    if (!displayNum.innerText.includes(".")){
+        displayNum.innerText += ".";
+    };
+});
+
 const divBtn = document.getElementById("divBtn");
 divBtn.addEventListener("click", () => {
     storedValue = Number(displayNum.innerText);
