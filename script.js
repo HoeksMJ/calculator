@@ -84,15 +84,27 @@ equalsBtn.addEventListener("click", () => {
     storedOperator = 0;
 });
 
-const zeroBtn = document.getElementById("zeroBtn");
+function listenerGenerator(btn) {
+    btn = document.getElementById(`${btn}`);
+    btn.addEventListener("click", () => {
+        showNum(btn);
+    });
+};
+
+const btnArr = ["zeroBtn", "oneBtn", "twoBtn", "threeBtn", "fourBtn", "fiveBtn", "sixBtn", "sevenBtn", "eightBtn", "nineBtn"];
+btnArr.forEach(listenerGenerator);
+
+/* const zeroBtn = document.getElementById("zeroBtn");
 zeroBtn.addEventListener("click", () => {
     showNum(zeroBtn);
-});
+}); */
+
+/* 
 
 const oneBtn = document.getElementById("oneBtn");
 oneBtn.addEventListener("click", () => {
     showNum(oneBtn);
-});
+}); 
 
 const twoBtn = document.getElementById("twoBtn");
 twoBtn.addEventListener("click", () => {
@@ -133,3 +145,5 @@ const nineBtn = document.getElementById("nineBtn");
 nineBtn.addEventListener("click", () => {
     showNum(nineBtn);
 });
+
+*/
