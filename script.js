@@ -31,7 +31,6 @@ clearBtn.addEventListener("click", () => {clearCalculator();});
 
 const decBtn = document.getElementById("decBtn");
 decBtn.addEventListener("click", () => {
-    //if displaynum inner text does not include . already
     if (!displayNum.innerText.includes(".")){
         displayNum.innerText += ".";
     };
@@ -80,7 +79,7 @@ equalsBtn.addEventListener("click", () => {
         displayNum.innerText = storedValue + Number(displayNum.innerText);
     };
     if (displayNum.innerText.length > 10){
-        displayNum.innerText = "ERROR";
+        displayNum.innerText = Number(displayNum.innerText).toExponential(3);
     };
     storedOperator = 0;
 });
